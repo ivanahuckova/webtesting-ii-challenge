@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-import Dashboard from './Components/Dashboard';
-import Display from './Components/Display';
+import GameContainer from './Components/GameContainer';
 
 function App() {
   const [strikes, setStrikes] = useState(0);
@@ -10,8 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <Dashboard strikes={strikes} setStrikes={setStrikes} setBalls={setBalls} balls={balls} />
-      <Display strikes={strikes} balls={balls} />
+      <GameContainer strikes={strikes} setStrikes={setStrikes} balls={balls} setBalls={setBalls} />
     </div>
   );
 }
