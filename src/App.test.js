@@ -12,11 +12,27 @@ describe('App', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  // it('returns +1 when clicked on foul button and strikes < 2', async () => {
-  //   const wrap = rtl.render(<App />);
-  //   rtl.fireEvent.click(wrap.getByText(/foul/i));
-  //   const strike = await wrap.queryByTestId('strikes');
-  //   console.log(strike);
-  //   expect(strike).toContain(1);
-  // });
+  it('returns +1 strike when clicked on foul button', () => {
+    const wrap = rtl.render(<App />);
+    rtl.fireEvent.click(wrap.getByText(/foul/i));
+    expect(wrap.getByText(/1/i));
+  });
+});
+
+it('returns +1 strike when clicked on strike button', () => {
+  const wrap = rtl.render(<App />);
+  rtl.fireEvent.click(wrap.getByText(/strike/i));
+  expect(wrap.getByText(/1/i));
+});
+
+it('returns resets strike and balls when clicked on hit button', () => {
+  const wrap = rtl.render(<App />);
+  rtl.fireEvent.click(wrap.getByText(/hit/i));
+  expect(wrap.getByText(/0/i));
+});
+
+it('returns +1 balls when clicked on ball button', () => {
+  const wrap = rtl.render(<App />);
+  rtl.fireEvent.click(wrap.getByText(/ball/i));
+  expect(wrap.getByText(/0/i));
 });

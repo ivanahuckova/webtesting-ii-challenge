@@ -4,10 +4,10 @@ export default function Display(props) {
   return (
     <div>
       <div>
-        Count balls: <span data-testid="balls">{props.balls}</span>
+        Count balls: <span data-testid="ballsid">{props.balls}</span>
       </div>
       <div>
-        Count strikes: <span data-testid="strikes">{props.strikes}</span>
+        Count strikes: <span data-testid="strikesid">{props.strikes}</span>
       </div>
     </div>
   );
